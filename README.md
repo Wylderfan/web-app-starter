@@ -140,6 +140,20 @@ A dropdown appears in the nav. Selecting a profile stores it in the session. Use
 
 ---
 
+## Stopping the server
+
+**Dev server (`run.py`):** Press `Ctrl+C` in the terminal where it's running.
+
+**Gunicorn:** Also `Ctrl+C` if running in the foreground. If you started it in the background, find and kill the process:
+
+```bash
+pkill -f "gunicorn"
+# or more precisely:
+lsof -ti :5000 | xargs kill
+```
+
+---
+
 ## Production
 
 Use gunicorn instead of `run.py`:
